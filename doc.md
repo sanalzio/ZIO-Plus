@@ -136,3 +136,5 @@ You can see [example library repository](https://www.github.com/sanalzio/example
 [**Code in GitHub**](https://github.com/sanalzio/ZIO-Plus/blob/master/example.zi)
 
 [**Raw Code**](https://raw.githubusercontent.com/sanalzio/ZIO-Plus/master/example.zi)
+
+![Example code image](exampleCode.png)
