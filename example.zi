@@ -1,0 +1,6 @@
+getinp userinp Guess the number I'm thinking of between 1 and 10: 
+randint randominteger 1 10
+if ${userinp}===${randominteger}
+    echo You guessed the number correctly!
+else
+    echo You guessed the number incorrectly!

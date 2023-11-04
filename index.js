@@ -92,6 +92,12 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 		return stripped_lines.join("\n");
 	}
 	for (let index = 0; index < lines.length; index++) {
+		for (let key in definitions) {
+			if (definitions.hasOwnProperty(key)) {
+				let icerik = new RegExp("${" + key + "}", "g");
+				lines[index] = lines[index].replaceAll("${" + key + "}", definitions[key]);
+			}
+		}
 		let line = lines[index].replace("\r", "");
 		if (line.startsWith("//")) {
 			continue;
@@ -111,16 +117,18 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 			arg = linecontent.split(" ");
 			cmd = arg[0];
 		}
-		for (let indx = 0; indx < lines.length; indx++) {
+		/* for (let indx = 0; indx < lines.length; indx++) {
 			for (let key in definitions) {
 				if (definitions.hasOwnProperty(key)) {
-					lines[indx] = lines[indx].replace("${" + key + "}", definitions[key]);
-					line = lines[indx].replace("${" + key + "}", definitions[key]);
-					arg = lines[indx].replace("${" + key + "}", definitions[key]).split(" ");
+					let icerik = new RegExp("${" + key + "}", "g");
+					lines[indx] = lines[indx].replace(icerik, definitions[key]);
+					line = lines[indx].replace(icerik, definitions[key]);
+					arg = lines[indx].replace(icerik, definitions[key]).split(" ");
 					cmd = arg[0];
 				}
 			}
-		}
+		} */
+		// console.log(line);
 		if (line.startsWith("  ") || line.startsWith("	")) {
 			if (!lastcondition) {
 				editLine("");
@@ -191,10 +199,7 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 			default:
 				const commandFiles = fs
 					.readdirSync(join(__dirname, commandfolder))
-					.filter(
-						(file) =>
-							file.endsWith(".js")
-					);
+					.filter((file) => file.endsWith(".js"));
 				for (let ci = 0; ci < commandFiles.length; ci++) {
 					const file = commandFiles[ci];
 					const command = require(join(__dirname, commandfolder, `${file}`));
