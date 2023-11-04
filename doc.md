@@ -1,12 +1,12 @@
 # ZIO+ Documentation
 
 - [ZIO+ Documentation](#zio-documentation)
-  - [How to install](#how-to-install)
+  - [📁 How to install](#-how-to-install)
     - [How to clone repository?](#how-to-clone-repository)
     - [Click to open project with Gihtub Desktop](#click-to-open-project-with-gihtub-desktop)
-  - [How to use](#how-to-use)
-    - [How can i run ZIO+ code](#how-can-i-run-zio-code)
-  - [How to write .zi code](#how-to-write-zi-code)
+  - [❔ How to use](#-how-to-use)
+    - [⚙ How can i run ZIO+ code](#-how-can-i-run-zio-code)
+  - [📝 How to write .zi code](#-how-to-write-zi-code)
   - [Keys](#keys)
     - [comments](#comments)
     - [define](#define)
@@ -22,7 +22,7 @@
     - [Install library](#install-library)
     - [Create library](#create-library)
 
-## How to install
+## 📁 How to install
 Sorry I couldn't turn the project into an Executable file but you can clone repository and run it in your terminal.
 You can download the latest version of ZIO+ from [here](https://www.github.com/sanalzio/zio+/archive/refs/heads/master.zip)
 or clone repository for install
@@ -35,9 +35,9 @@ or clone repository for install
 or open with Github Desktop
 ### [Click to open project with Gihtub Desktop](x-github-client://openRepo/https://github.com/sanalzio/zio+)
 
-## How to use
+## ❔ How to use
 You can write zio+ code on any text editor.
-### How can i run ZIO+ code
+### ⚙ How can i run ZIO+ code
 1) Open terminal in your folder where you want to save the project.
 2) If Node.js is not installed on your computer, please install it.
 3) Use this command for install requirements:
@@ -51,7 +51,7 @@ You can write zio+ code on any text editor.
     node index.js <.zi file path>
     ```
 
-## How to write .zi code
+## 📝 How to write .zi code
 1) Create new text file and chage extesion to .zi
 2) And edit file content
 
