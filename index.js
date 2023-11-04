@@ -11,7 +11,7 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 		.then((response) => {
 			const setupzicon = response.data.split("\n");
 			setupzicon.forEach((line) => {
-				const tla = line.split(" ");
+				const tla = line.replace("\r", "").split(" ");
 				if (tla.length > 1 && tla[0].toLowerCase() === "cmd") {
 					let filename = tla[1];
 					let simple = false;
