@@ -12,6 +12,7 @@ The repository for the version of the project written in Python but with slight 
   - [❔ How to use](#-how-to-use)
     - [⚙ How can i run ZIO+ code](#-how-can-i-run-zio-code)
   - [📖 Click to go Documentation](#-click-to-go-documentation)
+  - [LICENSE](#license)
 
 
 [<img alt="downloadbtn" src="https://dabuttonfactory.com/button.png?t=Download&f=Ubuntu-Bold&ts=30&tc=fff&hp=15&vp=15&c=6&bgt=unicolored&bgc=238636&bs=4&bc=37914a" width="77px">](https://www.github.com/sanalzio/ZIO-Plus/archive/refs/heads/master.zip)
@@ -47,3 +48,6 @@ You can write zio+ code on any text editor.
     ```
 
 ## [📖 Click to go Documentation](https://www.github.com/sanalzio/ZIO-Plus/blob/master/doc.md)
+
+## LICENSE
+[**MIT**](https://raw.githubusercontent.com/sanalzio/ZIO-Plus/master/LICENSE)
