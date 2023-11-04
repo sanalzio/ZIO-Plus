@@ -19,8 +19,8 @@
     - [echo](#echo)
   - [delay](#delay)
   - [Library System](#library-system)
-    - [Install library](#install-library)
-    - [Create library](#create-library)
+    - [📦 Install library](#-install-library)
+    - [🗳 Create library](#-create-library)
 
 ## 📁 How to install
 Sorry I couldn't turn the project into an Executable file but you can clone repository and run it in your terminal.
@@ -120,13 +120,13 @@ delay 5000
 
 ## Library System
 Library system is a way to manage your scripts and libraries. You can use it like this:
-### Install library
+### 📦 Install library
 ```bash
 node index.js i sanalzio.example-ZIO-Plus-library.master
 ```
 `github_user.user_repository.branch_or_tag`
 
-### Create library
+### 🗳 Create library
 You can see [example library repository](https://www.github.com/sanalzio/example-ZIO-Plus-library).
 
 [![example-ZIO-Plus-library](https://github-readme-stats.vercel.app/api/pin/?username=sanalzio&repo=example-ZIO-Plus-library&show_owner=true&theme=dark)](https://www.github.com/sanalzio/example-ZIO-Plus-library)
