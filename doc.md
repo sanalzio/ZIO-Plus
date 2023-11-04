@@ -21,6 +21,7 @@
   - [Library System](#library-system)
     - [📦 Install library](#-install-library)
     - [🗳 Create library](#-create-library)
+    - [Example Code: Number guessing game](#example-code-number-guessing-game)
 
 ## 📁 How to install
 Sorry I couldn't turn the project into an Executable file but you can clone repository and run it in your terminal.
@@ -130,3 +131,8 @@ node index.js i sanalzio.example-ZIO-Plus-library.master
 You can see [example library repository](https://www.github.com/sanalzio/example-ZIO-Plus-library).
 
 [![example-ZIO-Plus-library](https://github-readme-stats.vercel.app/api/pin/?username=sanalzio&repo=example-ZIO-Plus-library&show_owner=true&theme=dark)](https://www.github.com/sanalzio/example-ZIO-Plus-library)
+
+### Example Code: Number guessing game
+[**Code in GitHub**](https://github.com/sanalzio/ZIO-Plus/blob/master/example.zi)
+
+[**Raw Code**](https://raw.githubusercontent.com/sanalzio/ZIO-Plus/master/example.zi)
