@@ -17,7 +17,7 @@ The repository for the version of the project written in Python but with slight 
   - [LICENSE](#license)
 
 
-[<img alt="downloadbtn" src="https://dabuttonfactory.com/button.png?t=Download&f=Ubuntu-Bold&ts=30&tc=fff&hp=15&vp=15&c=6&bgt=unicolored&bgc=238636&bs=4&bc=37914a" width="77px">](https://github.com/sanalzio/ZIO-Plus/releases/download/1.2/ziolang.7z)
+[<img alt="downloadbtn" src="https://dabuttonfactory.com/button.png?t=Download&f=Ubuntu-Bold&ts=30&tc=fff&hp=15&vp=15&c=6&bgt=unicolored&bgc=238636&bs=4&bc=37914a" width="77px">](https://github.com/sanalzio/ZIO-Plus/releases/)
 ![Repository stars](https://custom-icon-badges.demolab.com/github/stars/sanalzio/ZIO-Plus.svg?color=yellow&logo=star&logoColor=darkyellow&style=for-the-badge)
 
 ## [Click to check for new updates.](https://www.github.com/sanalzio/ZIO-Plus/blob/master/doc.md#updates)
