@@ -35,7 +35,7 @@
 
 ## 📁 How to install
 Sorry I couldn't turn the project into an Executable file but you can clone repository and run it in your terminal.
-You can download the latest version of ZIO+ from [here](https://www.github.com/sanalzio/ZIO-Plus/archive/refs/heads/master.zip)
+You can download the latest version of ZIO+ from [here](https://github.com/sanalzio/ZIO-Plus/releases) or [here](https://www.github.com/sanalzio/ZIO-Plus/archive/refs/heads/master.zip)
 or clone repository for install
 ### How to clone repository?
 1) Open terminal or git bash in your folder where you want to save the project
