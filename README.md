@@ -10,6 +10,7 @@ The repository for the version of the project written in Python but with slight 
   - [📁 How to install](#-how-to-install)
     - [How to clone repository?](#how-to-clone-repository)
     - [Click to open project with Gihtub Desktop](#click-to-open-project-with-gihtub-desktop)
+    - [Install requirements](#install-requirements)
   - [❔ How to use](#-how-to-use)
     - [⚙ How can i run ZIO+ code](#-how-can-i-run-zio-code)
   - [📖 Click to go Documentation](#-click-to-go-documentation)
@@ -34,9 +35,8 @@ or clone repository for install
 or open with Github Desktop
 ### [Click to open project with Gihtub Desktop](x-github-client://openRepo/https://github.com/sanalzio/ZIO-Plus)
 
-## ❔ How to use
-You can write zio+ code on any text editor.
-### ⚙ How can i run ZIO+ code
+### Install requirements
+
 1) Open terminal in your folder where you want to save the project.
 2) If Node.js is not installed on your computer, please install it.
 3) Use this command for install requirements:
@@ -44,7 +44,12 @@ You can write zio+ code on any text editor.
     ```bash
     npm intall
     ```
-4) And use this command for run .zi code:
+
+## ❔ How to use
+You can write zio+ code on any text editor.
+### ⚙ How can i run ZIO+ code
+1) Open terminal in your folder where you want to save the project.
+2) And use this command for run .zi code:
 
     ```bash
     node index.js <.zi file path>
