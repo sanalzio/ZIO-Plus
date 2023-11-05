@@ -1,6 +1,7 @@
 # ZIO+ Documentation
 
 - [ZIO+ Documentation](#zio-documentation)
+  - [Updates!](#updates)
   - [📁 How to install](#-how-to-install)
     - [How to clone repository?](#how-to-clone-repository)
     - [Click to open project with Gihtub Desktop](#click-to-open-project-with-gihtub-desktop)
@@ -15,13 +16,21 @@
     - [getinp](#getinp)
     - [if](#if)
     - [else](#else)
+    - [point](#point)
+    - [break](#break)
   - [Commands](#commands)
     - [echo](#echo)
   - [delay](#delay)
+    - [goto](#goto)
+    - [quit](#quit)
   - [Library System](#library-system)
     - [📦 Install library](#-install-library)
     - [🗳 Create library](#-create-library)
     - [Example Code: Number guessing game](#example-code-number-guessing-game)
+
+## Updates!
+1) **Added `point` key and `goto` command. [GO point](#point) or [GO goto](#goto)**
+2) **Added `break` key for point and goto keys. [GO!](#break)**
 
 ## 📁 How to install
 Sorry I couldn't turn the project into an Executable file but you can clone repository and run it in your terminal.
@@ -107,6 +116,25 @@ else
     echo False!
 ```
 
+### point
+```bash
+point x
+echo Loop!
+goto x
+```
+
+### break
+```bash
+define integer 0
+point looppoint
+delay 1000
+echo ${integer}
+define integer $[${integer}+1]
+if ${integer}>=3
+    break
+goto looppoint
+```
+
 ## Commands
 ### echo
 ```bash
@@ -117,6 +145,18 @@ echo Hello World
 `delay <miliseconds>`
 ```bash
 delay 5000
+```
+
+### goto
+```bash
+point x
+echo Loop!
+goto x
+```
+
+### quit
+```bash
+quit
 ```
 
 ## Library System

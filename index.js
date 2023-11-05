@@ -26,7 +26,7 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 							if (simple) {
 								cmdcon = `exports.name = "${
 									res.data.split("\n")[0].split(" //")[0]
-								}";\nexports.desc = "?";\nexports.handler = (cmd, arg, line, lines, editLine) => {\n${res.data
+								}";\nexports.desc = "?";\nexports.handler = (cmd, arg, line, lines, editLine, definitions, points) => {\n${res.data
 									.split("\n")
 									.slice(1)
 									.join("\n")}\n};`;
@@ -47,7 +47,7 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 							if (simple) {
 								cmdcon = `exports.name = "${
 									res.data.split("\n")[0]
-								}";\nexports.desc = "?";\nexports.handler = (cmd, arg, line, lines, editLine) => {\n${res.data
+								}";\nexports.desc = "?";\nexports.handler = (cmd, arg, line, lines, editLine, definitions, points) => {\n${res.data
 									.split("\n")
 									.slice(1)
 									.join("\n")}\n};`;
@@ -72,7 +72,9 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 	let filecon = fs.readFileSync(argvs[2], "utf-8");
 	let lines = filecon.split("\n");
 
-	const definitions = {};
+	let definitions = {};
+	let points = {};
+	let lastgoto = 0;
 	let lastcondition = false;
 
 	function sleep(ms) {
@@ -92,13 +94,13 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 		return stripped_lines.join("\n");
 	}
 	for (let index = 0; index < lines.length; index++) {
+		let line = lines[index].replace("\r", "");
 		for (let key in definitions) {
 			if (definitions.hasOwnProperty(key)) {
-				let icerik = new RegExp("${" + key + "}", "g");
-				lines[index] = lines[index].replaceAll("${" + key + "}", definitions[key]);
+				// lines[index] = lines[index].replaceAll("${" + key + "}", definitions[key]);
+				line = line.replaceAll("${" + key + "}", definitions[key]);
 			}
 		}
-		let line = lines[index].replace("\r", "");
 		if (line.startsWith("//")) {
 			continue;
 		}
@@ -112,23 +114,11 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 		let arg = line.split(" ");
 		let cmd = arg[0];
 		function editLine(linecontent) {
-			lines[index] = linecontent;
+			// lines[index] = linecontent;
 			line = linecontent;
 			arg = linecontent.split(" ");
 			cmd = arg[0];
 		}
-		/* for (let indx = 0; indx < lines.length; indx++) {
-			for (let key in definitions) {
-				if (definitions.hasOwnProperty(key)) {
-					let icerik = new RegExp("${" + key + "}", "g");
-					lines[indx] = lines[indx].replace(icerik, definitions[key]);
-					line = lines[indx].replace(icerik, definitions[key]);
-					arg = lines[indx].replace(icerik, definitions[key]).split(" ");
-					cmd = arg[0];
-				}
-			}
-		} */
-		// console.log(line);
 		if (line.startsWith("  ") || line.startsWith("	")) {
 			if (!lastcondition) {
 				editLine("");
@@ -173,6 +163,12 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 			case "getinp":
 				definitions[arg[1]] = prompt(arg.length < 3 ? "" : arg.slice(2).join(" "));
 				break;
+			case "point":
+				points[arg[1]] = index;
+				break;
+			case "break":
+				index = lastgoto;
+				break;
 			default:
 				const keyFiles = fs
 					.readdirSync(join(__dirname, keyfolder))
@@ -181,13 +177,17 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 					const file = keyFiles[ci];
 					const command = require(join(__dirname, keyfolder, `${file}`));
 					if (command.name === cmd) {
-						command.handler(cmd, arg, line, lines, editLine);
+						command.handler(cmd, arg, line, lines, editLine, definitions, points);
 						break;
 					}
 				}
 				break;
 		}
 		switch (cmd) {
+			case "goto":
+				lastgoto = index;
+				index = points[arg[1]];
+				break;
 			case "echo":
 				console.log(arg.slice(1).join(" "));
 				break;
@@ -204,7 +204,7 @@ if (argvs.length >= 4 && argvs[2].toLowerCase() === "i") {
 					const file = commandFiles[ci];
 					const command = require(join(__dirname, commandfolder, `${file}`));
 					if (command.name === cmd) {
-						command.handler(cmd, arg, line, lines, editLine);
+						command.handler(cmd, arg, line, lines, editLine, definitions, points);
 						break;
 					}
 				}

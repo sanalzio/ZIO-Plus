@@ -1,6 +1,12 @@
-getinp userinp Guess the number I'm thinking of between 1 and 10: 
 randint randominteger 1 10
+getinp userinp Guess the number I'm thinking of between 1 and 10: 
+point start
+echo 
 if ${userinp}===${randominteger}
     echo You guessed the number correctly!
+    echo 
+    quit
 else
-    echo You guessed the number incorrectly!
+    getinp userinp You guessed the number incorrectly. Try again: 
+    echo 
+goto start

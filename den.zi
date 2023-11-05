@@ -1,0 +1,8 @@
+define a 0
+point a
+delay 1000
+echo ${a}
+define a $[${a}+1]
+if ${a}>=3
+    break
+goto a
